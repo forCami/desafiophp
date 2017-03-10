@@ -42,7 +42,9 @@
 			
 			
 			if ($conn->query($sql) === TRUE) {
-			    echo "Materia agregada correctamente";
+			    echo "<div class=\"alert alert-success\">
+  					<strong>Materia agregada correctamente</strong>
+					</div>";
 			} else {
 			    echo "Error: " . $sql . "<br>" . $conn->error;
 			}

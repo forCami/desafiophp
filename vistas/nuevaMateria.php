@@ -20,12 +20,26 @@
 	</head>
 	
 	<body>
+		<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Desafio PHP</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="home.php">Home</a></li>
+      <li class="active"><a href="#">Alta de materias</a></li>
+    </ul>
+  </div>
+</nav>
 		<h1 class="titulos"> 
-			Bienvenido al Desafio! 
+			Alta de materias
 		</h1>
-
+		<div class="container">
 		<form name="formulario" method="post" action="resultado.php">
-			<select name="carrera" id="carrera">
+			<div class="form-group row">
+			<div class="col-sm-1"><label for="carrera">Carrera: </label></div>
+			<div class="col-sm-3"><select name="carrera" id="carrera" class="form-control">
+			
 			<?php
 
 			
@@ -60,23 +74,38 @@
 	$conn->close();
 
 				?>
-						</select>
-						<input type="text" placeholder="Inserte nombre" name="nombreMateria">
-						<textarea cols="51" rows="5" name="descripcion" placeholder="Inserte descripcion" maxlength="255"></textarea>
-						<select name="cargaHoraria" id="cargaHoraria">
-							<option value="2">2</option>
-							<option value="4">4</option>
-							<option value="6">6</option>
-							<option value="8">8</option>
-							<option value="10">10</option>
-							</select>
+						</select></div>
+						</div>
+						<div class="form-group row">
+							<div class="col-sm-1"><label for="nombreMateria">Nombre de la materia: </label></div>
+							<div class="col-sm-9"><input type="text" placeholder="Inserte nombre" name="nombreMateria" class="form-control"></div>
+						</div>
+						<div class="form-group row">
+	  						<div class="col-sm-1"><label for="comment">Descripcion:</label></div>
+							<div class="col-sm-9"><textarea cols="51" rows="5" name="descripcion" placeholder="Inserte descripcion" maxlength="255" class="form-control"></textarea></div>
+						</div>
+						</br>
+						<div class="form-group row">
+							<div class="col-sm-1"><label for="comment">Carga horaria:</label></div>
+							<div class="col-sm-9">
+								<select name="cargaHoraria" id="cargaHoraria" class="form-control">
+									<option value="2">2</option>
+									<option value="4">4</option>
+									<option value="6">6</option>
+									<option value="8">8</option>
+									<option value="10">10</option>
+									</select>
+							</div>
+						</div>	
 							<!-- validar todo con JS... si hay error no se sigue-->
-		
-		<button type="submit" value="Submit">Enviar</button>
-		<button type="reset" value="Reset">Resetear</button>
+		<center>
+		<button type="submit" value="Submit" class="btn btn-default">Enviar</button>
+		<button type="reset" value="Reset" class="btn btn-warning">Resetear</button>
+		</center>
 		</form>
 	<br>
 
 		<a href="home.php">Volver</a>
+		</div>
 	</body>
 </html>
