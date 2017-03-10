@@ -39,14 +39,13 @@
 			Bienvenido al Desafio! 
 		</h1>
 <div class="container">
-	
 		
 		<?php
 
-		$host = 'mysql.hostinger.com.ar';
-		$user = 'u346633299_user';
-		$pass = 'elsfIn3E4yMZ';
-		$db = 'u346633299_desaf';
+		$host = 'localhost';
+		$user = 'root';
+		$pass = '';
+		$db = 'desafio';
 
 		$palabraClave = $_POST['busqueda']; //Contenido a buscar
 
