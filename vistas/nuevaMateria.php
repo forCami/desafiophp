@@ -49,10 +49,10 @@
 
 			
 
-			$host = 'localhost';
-			$user = 'root';
-			$pass = '';
-			$db = 'desafio';
+			$host = 'mysql.hostinger.com.ar';
+			$user = 'u346633299_user';
+			$pass = 'elsfIn3E4yMZ';
+			$db = 'u346633299_desaf';
 
 			$conn = new mysqli($host,$user,$pass,$db);
 

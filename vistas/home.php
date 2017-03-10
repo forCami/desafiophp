@@ -18,7 +18,6 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-		
 		<!-- Esta es la forma de levantar archivos de CSS -->
 		<link rel="stylesheet" href="../css/estilos.css">
 
@@ -54,10 +53,10 @@
 		
 		<?php
 
-		$host = 'localhost';
-		$user = 'root';
-		$pass = '';
-		$db = 'desafio';
+		$host = 'mysql.hostinger.com.ar';
+		$user = 'u346633299_user';
+		$pass = 'elsfIn3E4yMZ';
+		$db = 'u346633299_desaf';
 
 		$conn = new mysqli($host,$user,$pass,$db);
 
