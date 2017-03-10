@@ -15,9 +15,11 @@
 			Bienvenido al Desafio! 
 		</h1>
 
-		<form>
+		<form name="formulario" method="post" action="resultado.php">
 			<select name="carrera" id="carrera">
 			<?php
+
+			
 
 			$host = 'localhost';
 			$user = 'root';
@@ -61,7 +63,9 @@
 							</select>
 							<!-- validar todo con JS... si hay error no se sigue-->
 		
-		
+		<button type="submit" value="Submit">Enviar</button>
+		<button type="reset" value="Reset">Resetear</button>
+		</form>
 	<br>
 
 		<a href="home.php">Volver</a>
