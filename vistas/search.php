@@ -1,13 +1,9 @@
 <html>
 	<head>
 		<title>	Desafio </title>
-
-		<meta charset="UTF-8">
-
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-		<!-- Esta es la forma de levantar archivos JS -->
-		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		
+		<!-- Esta es la forma de levantar archivos de CSS -->
+		<link rel="stylesheet" href="../css/estilos.css">
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -18,8 +14,10 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-		<!-- Esta es la forma de levantar archivos de CSS -->
-		<link rel="stylesheet" href="../css/estilos.css">
+		<!-- Esta es la forma de levantar archivos JS -->
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 	</head>
 	
@@ -30,15 +28,16 @@
       <a class="navbar-brand" href="#">Desafio PHP</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="#">Inicio</a></li>
       <li><a href="nuevaMateria.php">Alta de materias</a></li>
     </ul>
   </div>
 </nav>
 		<h1 class="titulos"> 
-			Bienvenido al Desafio! 
+			Busqueda de las materias que contienen "<?php echo $_POST['busqueda'];?>"
 		</h1>
 <div class="container">
+	
 		
 		<?php
 
@@ -69,17 +68,17 @@
 
 		if ($result->num_rows > 0) {
 
-	    echo "<center><div><table border=\"0\" class=\"table table-striped\"><tr><th>Nombre</th><th>Descripcion</th><th>Carga Horaria</th><th>Carrera</th><th>Opciones</th></tr>";
+	    echo "<form method=\"post\" action=\"\"><center><div><table border=\"0\" class=\"table table-striped\"><tr><th>Nombre</th><th>Descripcion</th><th>Carga Horaria</th><th>Carrera</th><th>Opciones</th></tr>";
 
 
 	    while($row = $result->fetch_assoc()) {
 
 
-	         echo "<tr><td><center>".$row["materiasNombre"]."</center></td><td> ".$row["descripcion"]."</td><td><center>".$row["carga_horaria"]." horas</center></td><td>".$row["nombre"]."</td><td><a href=\"editarMateria.php\"><input type=\"submit\" class=\"btn btn-primary\" method=\"post\" action=\"ejemploPost.php\" value=\"Editar\"></a> <button class=\"btn btn btn-danger\" type=\"submit\" name=\"remove\" value=\"{$row['materiasID']}\" onClick=\"return confirm('Desea eliminar?');\">Remove</button></tr>";
+	         echo "<tr><td><center>".$row["materiasNombre"]."</center></td><td> ".$row["descripcion"]."</td><td><center>".$row["carga_horaria"]." horas</center></td><td>".$row["nombre"]."</td><td><a href=\"editarMateria.php\"><input type=\"submit\" class=\"btn btn-primary\" method=\"post\" action=\"ejemploPost.php\" value=\"Editar\"></a> <button class=\"btn btn btn-danger\" type=\"submit\" name=\"remove\" value=\"{$row['materiasID']}\" onClick=\"return confirm('Desea eliminar?');\">Eliminar</button></tr>";
 
 	    }
 
-	    echo "</table></div></center>";
+	    echo "</table></div></center></form>";
 
 	} else {
 
@@ -87,18 +86,20 @@
 
 	}
 
-	if(isset($_POST['eliminar'])){
-	
-		$sql2= "DELETE FROM `materias` WHERE `materias`.`id` = {$_POST['eliminar']}";
-		$result2 = $conn->query($sql2);
-	}
+		 if(isset($_POST['remove'])){
+	     $id = (int)$_POST['remove'];
+	     $removeQuery = "DELETE FROM `materias` WHERE `materias`.`id` = $id";
+	     $result2 = $conn->query($removeQuery);
+	     header("Location: home.php");
+ 	}
 
 	$conn->close();
 
 
 		?>
 
-		<a href="home.php">Volver</a>
+		<a href="home.php"><button type="button" class="btn btn-warning">Volver</button></a>
+		<a href="nuevaMateria.php"><button type="button" class="btn btn-info">Nueva materia</button></a>
 		</div>
 	</body>
 </html>
