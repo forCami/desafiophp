@@ -1,5 +1,7 @@
 .titulos{
-	color: blue;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 32px;
+	color: #333;
 	text-align: center;	
 }
 
@@ -7,4 +9,24 @@
 	font-weight: bold;
 	text-align: center;
 	
+}
+
+.form-control{
+
+}
+
+.error {
+	border-color: red !important;
+    outline: 0 none !important;
+
+}
+
+.correcto {
+	border-color: #39ff14 !important;
+    outline: 0 none !important;
+
+ }
+
+ textarea {
+    resize: none;
 }

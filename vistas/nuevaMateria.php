@@ -1,9 +1,14 @@
 <html>
 	<head>
 		<title>	Desafio </title>
-		
-		<!-- Esta es la forma de levantar archivos de CSS -->
-		<link rel="stylesheet" href="../css/estilos.css">
+
+		<meta charset="UTF-8">
+
+		<!-- Esta linea es importante para que la pÃƒÂ¡gina sea responsive: -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Esta es la forma de levantar archivos JS -->
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -13,10 +18,10 @@
 
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-		<!-- Esta es la forma de levantar archivos JS -->
-		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		
+		<!-- Esta es la forma de levantar archivos de CSS -->
+		<link rel="stylesheet" href="../css/estilos.css">
+
 	</head>
 	
 	<body>
@@ -82,7 +87,7 @@
 						</div>
 						<div class="form-group row">
 	  						<div class="col-sm-1"><label for="comment">Descripcion:</label></div>
-							<div class="col-sm-9"><textarea cols="51" rows="5" name="descripcion" placeholder="Inserte descripcion" maxlength="255" class="form-control"></textarea></div>
+							<div class="col-sm-9"><textarea id="desc" cols="51" rows="4" name="descripcion" placeholder="Inserte descripcion" maxlength="255" class="form-control"></textarea></div>
 						</div>
 						</br>
 						<div class="form-group row">
@@ -99,7 +104,7 @@
 						</div>	
 							<!-- validar todo con JS... si hay error no se sigue-->
 		<center>
-		<button type="submit" value="Submit" class="btn btn-default">Enviar</button>
+		<button id="env" type="submit" value="Submit" class="btn btn-default">Enviar</button>
 		<button type="reset" value="Reset" class="btn btn-warning">Resetear</button>
 		</center>
 		</form>
@@ -109,3 +114,5 @@
 		</div>
 	</body>
 </html>
+
+<script type="text/javascript" src="../js/nuevaMateria.js"></script>
