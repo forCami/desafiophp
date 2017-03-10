@@ -48,11 +48,21 @@
 	}
 	$conn->close();
 
-				?>	
+				?>
 						</select>
+						<input type="text" placeholder="Inserte nombre" name="nombreMateria">
+						<textarea cols="51" rows="5" name="descripcion" placeholder="Inserte descripcion" maxlength="255"></textarea>
+						<select name="cargaHoraria" id="cargaHoraria">
+							<option value="2">2</option>
+							<option value="4">4</option>
+							<option value="6">6</option>
+							<option value="8">8</option>
+							<option value="10">10</option>
+							</select>
+							<!-- validar todo con JS... si hay error no se sigue-->
 		
 		
-
+	<br>
 
 		<a href="home.php">Volver</a>
 	</body>
